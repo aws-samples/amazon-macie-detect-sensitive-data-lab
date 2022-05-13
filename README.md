@@ -50,39 +50,39 @@ Next we'll create a Macie Job, this job will analyze objects in any number of S3
 
 To do this, select 'Get Started' and from then select Create Job under Analyze Buckets.
 
-![Macie JOb](images/step4-create-Macie-job.jpg)
+![Macie Job](images/step4-create-Macie-job.jpg)
 
 One the next screen, select 'Select specific buckets' to specify the bucket you wish to scan. And then select the bucket whose name begins with 'macie-devlab', this bucket has been prepopulated with test data for us to scan.
 
 Once selected, click on 'Next'
 
-![Macie JOb](images/step5-select-bucket.jpg)
+![Macie Job](images/step5-select-bucket.jpg)
 
 The next step is to review our buckets. You should see a single bucket with some estimated cost (the estimated cost might be $0.00). Click on Next.
 
-![Macie JOb](images/step6-review-buckets.png)
+![Macie Job](images/step6-review-buckets.png)
 
 Next we'll need to refine the scope of our discovery job. For the purpose of this lab, we'll use a one-time job with 100% sampling depth. In your production environments, you might run daily jobs that scan only new objects. Similarly for very large buckets, e.g. buckets wih millions of objects, customers can choose a sampling depth to run analysis on a subset of the objects in the bucket.
 
 For the purpose of the lab, the test data is small (<10 objects), so we'll run a one-time job with 100% sampling depth.
 
-![Macie JOb](images/step7-refine-scope.jpg)
+![Macie Job](images/step7-refine-scope.jpg)
 
 Now, we can select managed data identifiers. A set of built-in criteria and techniques that are designed to detect a specific type of sensitive data. Examples of sensitive data include credit card numbers, AWS secret access keys, or passport numbers for a particular country or region. These identifiers can detect a large and growing list of sensitive data types for many countries and regions. To view all the managed data identifiers, you can temporarily select the Include radio button. Just make sure you set the Selection type back to 'All' before proceeding to the next step.
 
-![Macie JOb](images/step8-selecting-managed-identifiers.png)
+![Macie Job](images/step8-selecting-managed-identifiers.png)
 
 Additionaly we can also specify custom data identifiers to help Macie identify sensitive data outside of what is provided by the managed data identifiers. As part of the lab, we've pre-populated a custom data identifier called 'Gotham Passport Number', which will detect any data based on a regular expression we specified. Part of the test data will have one instance of this to demonstrate how Macie will analyze the finding.
 
-![Macie JOb](images/step9-custom-data-identifier.png)
+![Macie Job](images/step9-custom-data-identifier.png)
 
 Now we'll enter a job name and optional description
 
-![Macie JOb](images/step10-general-settings.png)
+![Macie Job](images/step10-general-settings.png)
 
 Finally we can review and hit submit. The job might not have any information on the bucket yet, and hence would estimate the cost to be $0.00, we can ignore this for now.
 
-![Macie JOb](images/step11-submit.jpg)
+![Macie Job](images/step11-submit.jpg)
 
 Congratulations, you've successfully initiated your first Macie Data Discovery Job. Macie is now analyzing data within the S3 bucket you specified to detect sensitive data, both based on the managed data identifiers, and the one custom data identifier we specified.
 
