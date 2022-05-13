@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: >-
+  Macie ANZ Devlabs
+
+Resources:
+
+  MacieBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName:
+          !Sub
+            - 'macie-devlab-anz-${RandomGUID}'
+            - { RandomGUID: !Select [0, !Split ["-", !Select [2, !Split ["/", !Ref AWS::StackId ]]]] }
+        BucketEncryption: 
+          ServerSideEncryptionConfiguration: 
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  MacieBucketName:
+    Type: AWS::SSM::Parameter
+    Properties: 
+      DataType: text
+      Description: Name of the Macie Bucket
+      Name: MacieDevlabBucketName
+      Tier: Standard
+      Type: String
+      Value: !Ref MacieBucket
+
+  Cloud9InstanceAL2:
+    Type: AWS::Cloud9::EnvironmentEC2
+    Properties: 
+      AutomaticStopTimeMinutes: 20160
+      Description: Macie DevLab
+      ImageId: amazonlinux-2-x86_64
+      InstanceType: t2.micro
+      Name: Macie DevLab (Level 100)
