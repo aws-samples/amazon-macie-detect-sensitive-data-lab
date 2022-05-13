@@ -25,8 +25,6 @@ Once inside Cloud9, we can begin the process of setting up our labs.
 
 Copy and paste the following code into the terminal of your Cloud9IDE (the terminal is at the bottom right of your screen), hit `enter` to execute the script.
 
-*note: will change target github to official awslabs one once created*
-
     cd ~/environment && \
     rm -rf macie-ANZ-devlabs && \
     git clone https://github.com/aws-samples/amazon-macie-detect-sensitive-data-lab.git --quiet && \
