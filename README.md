@@ -29,7 +29,7 @@ Copy and paste the following code into the terminal of your Cloud9IDE (the termi
 
     cd ~/environment && \
     rm -rf macie-ANZ-devlabs && \
-    git clone https://github.com/keithrozario/macie-ANZ-devlabs.git --quiet && \
+    git clone https://github.com/aws-samples/amazon-macie-detect-sensitive-data-lab.git --quiet && \
     cd macie-ANZ-devlabs && \
     pip3 install boto3 --quiet && \
     python3 setup_lab.py && \
