@@ -26,9 +26,9 @@ Once inside Cloud9, we can begin the process of setting up our labs.
 Copy and paste the following code into the terminal of your Cloud9IDE (the terminal is at the bottom right of your screen), hit `enter` to execute the script.
 
     cd ~/environment && \
-    rm -rf macie-ANZ-devlabs && \
+    rm -rf amazon-macie-detect-sensitive-data-lab && \
     git clone https://github.com/aws-samples/amazon-macie-detect-sensitive-data-lab.git --quiet && \
-    cd macie-ANZ-devlabs && \
+    cd amazon-macie-detect-sensitive-data-lab && \
     pip3 install boto3 --quiet && \
     python3 setup_lab.py && \
     cd ~/environment
